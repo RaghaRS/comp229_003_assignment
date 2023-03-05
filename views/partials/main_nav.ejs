@@ -36,6 +36,13 @@
               <%}%>
           <a class="nav-link active" aria-current="page" href="/services"><i class="fa-brands fa-servicestack me-2"></i>Services</a>
         </li>
+        <% if(title=="contacts"){%>
+          <li class="nav-item active">
+            <%}else{%>
+              <li class="nav-item">
+                <%}%>
+            <a class="nav-link active" aria-current="page" href="/contactList"><i class="fa-solid fa-contact"></i>Business Contacts List</a>
+          </li>
        
         <% if(title=="Contact"){%>
         <li class="nav-item active">
@@ -44,7 +51,13 @@
               <%}%>
           <a class="nav-link active" aria-current="page" href="/contact"><i class="fa-solid fa-id-card me-2"></i>Contact</a>
         </li>
-
+        <%if(typeof displayName =='string'&&displayName){%>
+          <li class="navbar-text"><i class="fas fa-lg fa-user"></i>Welcome,<%=displayName%></li>
+          <li class ="nav-item"><a href="/logout" class="nav-link"><i class="fas fa-lg fa-sign-out-alt"></i>logout</a></li>
+          <%}
+          else {%>
+            <li class="nav-item"><a href="/login" class="nav-link"><i class="fas fa-lg fa-sign-in-alt"></i>Login</a></li>
+            <%}%>
         
     <!--</div>-->
   </div>
